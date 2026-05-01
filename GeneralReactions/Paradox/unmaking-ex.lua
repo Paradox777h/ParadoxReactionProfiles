@@ -27,7 +27,7 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "MoogleTelegraphs.Settings.aoeIDUserBlacklist[49998] = { label = \"[UM-EX] Broken AOE\", source = \"Paradox Reactions\" }\nMoogleTelegraphs.Settings.aoeIDUserBlacklist[49999] = { label = \"[UM-EX] Broken AOE\", source = \"Paradox Reactions\" }\nMoogleTelegraphs.Settings.aoeIDUserBlacklist[50000] = { label = \"[UM-EX] Broken AOE\", source = \"Paradox Reactions\" }\nMoogleTelegraphs.Settings.aoeIDUserBlacklist[50009] = { label = \"[UM-EX] Broken AOE\", source = \"Paradox Reactions\" }\n\nMoogleTelegraphs.Settings.aoeIDUserSetDonuts[49978] = { name = \"[UM-EX] Correct Donut Size\", radius = 40, source = \"Paradox Reactions\" }\nMoogleTelegraphs.Settings.aoeIDUserSetCones[50005] = { name = \"[UM-EX] Correct Cone Size\", angle = 45, source = \"Paradox Reactions\" }\n\nself.used = true",
+						actionLua = "gUnmakingEXOrbs = {}\nself.used = true",
 						conditions = 
 						{
 							
@@ -45,10 +45,14 @@ local tbl =
 								"116582c4-ef28-a0de-927d-18e633b2ae64",
 								true,
 							},
+							
+							{
+								"d1e428ae-1ce4-2ef7-b498-437489f388f5",
+								true,
+							},
 						},
 						endIfUsed = true,
 						gVar = "ACR_TensorRequiem3_CD",
-						name = "Moogle Telegraphs Adjustments",
 						uuid = "cc8db830-3e78-07b1-9aa1-ec8a4c562d5d",
 						version = 2.1,
 					},
@@ -96,188 +100,24 @@ local tbl =
 						version = 3,
 					},
 				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return TensorReactions_CurrentTimer < 30.0",
+						name = "Is Early In Fight",
+						uuid = "d1e428ae-1ce4-2ef7-b498-437489f388f5",
+						version = 3,
+					},
+				},
 			},
 			eventType = 3,
 			name = "[UM-EX] Setup",
-			uuid = "483e1355-226c-3de5-b72e-070d8169ec70",
+			uuid = "34820c0d-120e-c399-9262-59f4212b7398",
 			version = 2,
 		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Alert",
-						alertColor = -16711681,
-						alertPriority = 4,
-						alertTTS = true,
-						alertText = "Light Parties",
-						conditions = 
-						{
-							
-							{
-								"8330c93f-26b7-17e9-b893-7040ccbbf55e",
-								true,
-							},
-							
-							{
-								"7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-								true,
-							},
-							
-							{
-								"e1a2873c-6f46-a74d-9feb-30da56a77acc",
-								true,
-							},
-						},
-						endIfUsed = true,
-						uuid = "68f6dccd-d0ae-3565-ad52-1770ddfcf4dc",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1362,
-						name = "Is Unmaking-EX",
-						uuid = "8330c93f-26b7-17e9-b893-7040ccbbf55e",
-						version = 3,
-					},
-					inheritedIndex = 1,
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventSpellID = 50033,
-						name = "Is Dense Emptiness",
-						uuid = "7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-						version = 3,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 2,
-						eventEntityContentID = 14749,
-						name = "Is Enuo",
-						uuid = "e1a2873c-6f46-a74d-9feb-30da56a77acc",
-						version = 3,
-					},
-				},
-			},
-			eventType = 3,
-			name = "[UM-EX] Dense Emptiness",
-			uuid = "e23875f0-cf23-2c4c-a4d1-4bd389fb2610",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Alert",
-						alertColor = -16711681,
-						alertPriority = 4,
-						alertTTS = true,
-						alertText = "Pairs",
-						conditions = 
-						{
-							
-							{
-								"8330c93f-26b7-17e9-b893-7040ccbbf55e",
-								true,
-							},
-							
-							{
-								"7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-								true,
-							},
-							
-							{
-								"e1a2873c-6f46-a74d-9feb-30da56a77acc",
-								true,
-							},
-						},
-						endIfUsed = true,
-						uuid = "68f6dccd-d0ae-3565-ad52-1770ddfcf4dc",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1362,
-						name = "Is Unmaking-EX",
-						uuid = "8330c93f-26b7-17e9-b893-7040ccbbf55e",
-						version = 3,
-					},
-					inheritedIndex = 1,
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventSpellID = 50032,
-						name = "Is Airy Emptiness",
-						uuid = "7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-						version = 3,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 2,
-						eventEntityContentID = 14749,
-						name = "Is Enuo",
-						uuid = "e1a2873c-6f46-a74d-9feb-30da56a77acc",
-						version = 3,
-					},
-				},
-			},
-			eventType = 3,
-			name = "[UM-EX] Airy Emptiness",
-			uuid = "516d60b5-bee6-e50d-8c38-b4b28c5e6c07",
-			version = 2,
-		},
+		inheritedIndex = 2,
 	},
 	
 	{
@@ -290,129 +130,7 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "self.used = true",
-						conditions = 
-						{
-							
-							{
-								"8330c93f-26b7-17e9-b893-7040ccbbf55e",
-								true,
-							},
-							
-							{
-								"7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-								true,
-							},
-							
-							{
-								"d9493474-7db1-9068-8a7a-348d7c53129a",
-								true,
-							},
-						},
-						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "790044c3-9683-aadb-be24-61b292e022cc",
-						version = 2.1,
-					},
-					inheritedIndex = 1,
-				},
-				
-				{
-					data = 
-					{
-						aType = "Alert",
-						alertColor = -16711681,
-						alertPriority = 4,
-						alertTTS = true,
-						alertText = "Move",
-						conditions = 
-						{
-							
-							{
-								"8330c93f-26b7-17e9-b893-7040ccbbf55e",
-								true,
-							},
-							
-							{
-								"d9493474-7db1-9068-8a7a-348d7c53129a",
-								true,
-							},
-							
-							{
-								"7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-								true,
-							},
-						},
-						endIfUsed = true,
-						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "68f6dccd-d0ae-3565-ad52-1770ddfcf4dc",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1362,
-						name = "Is Unmaking-EX",
-						uuid = "8330c93f-26b7-17e9-b893-7040ccbbf55e",
-						version = 3,
-					},
-					inheritedIndex = 1,
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventBuffID = 4562,
-						eventSpellID = 50032,
-						name = "Is Fire Debuff",
-						uuid = "7a40ad30-8626-3bfb-9479-c2b34c95ca9e",
-						version = 3,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 9,
-						dequeueIfLuaFalse = true,
-						name = "Is Self",
-						partyTargetType = "Event Entity",
-						uuid = "d9493474-7db1-9068-8a7a-348d7c53129a",
-						version = 3,
-					},
-				},
-			},
-			eventType = 8,
-			name = "[UM-EX] Fire Debuff",
-			throttleTime = 1800,
-			uuid = "82c5e6ed-5ef5-5830-b42c-f1a06c88a420",
-			version = 2,
-		},
-		inheritedIndex = 5,
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local sourceID = eventArgs.sourceEntityID\nlocal tetherID = eventArgs.newTetherID\nlocal modelID = Argus.getEntityModel(sourceID)\n\nif (tetherID == 406 or tetherID == 407) and modelID == 19910 then\n    local drawer = TensorCore.getStaticDrawer(0x1A9200FF, 0.5)\n    drawer:addTimedCircleOnEnt(15000, sourceID, 3, nil, nil, true)\nend\n\nself.used = true",
+						actionLua = "if table.size(gUnmakingEXOrbs) == 8 then\n    gUnmakingEXOrbs = {}\nend\n\nlocal sourceID = eventArgs.sourceEntityID\nlocal sourceEntity = TensorCore.mGetEntity(sourceID)\nlocal tetherID = eventArgs.newTetherID\nlocal modelID = Argus.getEntityModel(sourceID)\n\nlocal orbData = {\n\tid = sourceEntity.id,\n    x = sourceEntity.pos.x,\n    y = sourceEntity.pos.y,\n    z = sourceEntity.pos.z,\n    yellow = (tetherID == 407),\n    isTankOrb = (modelID == 19910)\n}\n\ntable.insert(gUnmakingEXOrbs, orbData)\n\nself.used = true",
 						conditions = 
 						{
 							
@@ -425,9 +143,45 @@ local tbl =
 								"1a8e9380-e435-619a-bf34-b9479d0b3246",
 								true,
 							},
+							
+							{
+								"14088e85-7f8e-6414-b09e-20b432faa27e",
+								true,
+							},
 						},
-						endIfUsed = true,
+						gVar = "ACR_RikuPLD3_CD",
+						name = "Store Orb Data",
+						uuid = "07715197-545a-2dca-823a-dcef80fa8c1e",
+						version = 2.1,
+					},
+					inheritedIndex = 1,
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "if table.size(gUnmakingEXOrbs) == 8 then\n   local c = { x = 100, y = 0, z = 100 }\n\n    for i, orb in ipairs(gUnmakingEXOrbs) do\n        orb.heading = TensorCore.getHeadingToTarget(c, orb)\n    end\n\n    table.sort(gUnmakingEXOrbs, function(a, b)\n        return a.heading > b.heading\n    end)\n\n    local newNorth = nil\n    for i, orb in ipairs(gUnmakingEXOrbs) do\n        if orb.isTankOrb then\n            newNorth = i\n            break\n        end\n    end\n\n    local rotatedOrbs = {}\n    for i = 0, #gUnmakingEXOrbs - 1 do\n        local idx = ((newNorth - 1 + i) % #gUnmakingEXOrbs) + 1\n        table.insert(rotatedOrbs, gUnmakingEXOrbs[idx])\n    end\n\n    local yellows = {}\n    local purples = {}\n\n    for i, orb in ipairs(rotatedOrbs) do\n        if orb.yellow then\n            table.insert(yellows, orb)\n        else\n            table.insert(purples, orb)\n        end\n    end\n\n    local orderedOrbs = {}\n    for i, orb in ipairs(yellows) do\n        table.insert(orderedOrbs, orb)\n    end\n\n    for i, orb in ipairs(purples) do\n        table.insert(orderedOrbs, orb)\n    end\n\n    local labels = {\n        { text = \"T\", color = 0xFFFFAA00 },\n        { text = \"H\", color = 0xFF00FF00 },\n        { text = \"M\", color = 0xFF0000FF },\n        { text = \"R\", color = 0xFF0000FF },\n        { text = \"T\", color = 0xFFFFAA00 },\n        { text = \"H\", color = 0xFF00FF00 },\n        { text = \"M\", color = 0xFF0000FF },\n        { text = \"R\", color = 0xFF0000FF },\n    }\n\n    for i, orb in ipairs(orderedOrbs) do\n        local label = labels[i]\n        local radius = orb.isTankOrb and 3 or 1.5\n        local drawer = orb.yellow and TensorCore.getStaticDrawer(0x1A00DCFF, 0.5) or TensorCore.getStaticDrawer(0x1AFCBE03, 0.5)\n        drawer:addTimedCircleOnEnt(15000, orb.id, radius)\n\n        AnyoneCore.addTimedWorldTextOnEnt(15000, label.text, orb.id, label.color, true, 2)\n    end\nend\n\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"79797b6d-6951-9249-ad21-bc9fc4e5a377",
+								true,
+							},
+							
+							{
+								"1a8e9380-e435-619a-bf34-b9479d0b3246",
+								true,
+							},
+							
+							{
+								"14088e85-7f8e-6414-b09e-20b432faa27e",
+								true,
+							},
+						},
 						gVar = "ACR_TensorRequiem3_CD",
+						name = "Draw Orb Order",
 						uuid = "0e849449-f1b7-3c00-9ed2-294a5dbd5a84",
 						version = 2.1,
 					},
@@ -463,111 +217,26 @@ local tbl =
 					},
 					inheritedIndex = 1,
 				},
-			},
-			eventType = 15,
-			name = "[UM-EX] Highlight Tank Orb",
-			uuid = "9bb2c59e-1fa8-3fb5-ae00-267bc2642ef5",
-			version = 2,
-		},
-		inheritedIndex = 6,
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "self.used = true",
-						conditions = 
-						{
-							
-							{
-								"8330c93f-26b7-17e9-b893-7040ccbbf55e",
-								true,
-							},
-							
-							{
-								"fe007693-b61a-83c9-8b40-bf9b66c0ebb3",
-								true,
-							},
-						},
-						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "6a90c045-233e-bdc4-820b-df8b0ef69e5d",
-						version = 2.1,
-					},
-					inheritedIndex = 1,
-				},
-				
-				{
-					data = 
-					{
-						aType = "Alert",
-						alertColor = -16711681,
-						alertPriority = 4,
-						alertTTS = true,
-						alertText = "Keep Moving",
-						conditions = 
-						{
-							
-							{
-								"8330c93f-26b7-17e9-b893-7040ccbbf55e",
-								true,
-							},
-							
-							{
-								"fe007693-b61a-83c9-8b40-bf9b66c0ebb3",
-								true,
-							},
-						},
-						endIfUsed = true,
-						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "68f6dccd-d0ae-3565-ad52-1770ddfcf4dc",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1362,
-						name = "Is Unmaking-EX",
-						uuid = "8330c93f-26b7-17e9-b893-7040ccbbf55e",
-						version = 3,
-					},
-					inheritedIndex = 1,
-				},
 				
 				{
 					data = 
 					{
 						category = "Event",
 						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventSpellID = 50043,
-						name = "Is Deep Freeze",
-						uuid = "fe007693-b61a-83c9-8b40-bf9b66c0ebb3",
+						eventArgType = 5,
+						eventIntValue = 406,
+						name = "Is Orb Tether",
+						uuid = "14088e85-7f8e-6414-b09e-20b432faa27e",
 						version = 3,
 					},
 				},
 			},
-			eventType = 3,
-			name = "[UM-EX] Deep Freeze",
-			throttleTime = 4000,
-			timeout = 10,
-			uuid = "7f25385d-de70-2b7c-b55f-fd00c302d0b0",
+			eventType = 15,
+			name = "[UM-EX] Draw Orbs",
+			uuid = "33172e34-4c85-552c-8709-30c68ba5616a",
 			version = 2,
 		},
+		inheritedIndex = 4,
 	},
 	
 	{
@@ -759,29 +428,57 @@ local tbl =
 				{
 					data = 
 					{
-						aType = "Lua",
-						actionLua = "gUnmakingEXTowerData = {}\n\nself.used = true",
+						aType = "ACR",
 						conditions = 
 						{
 							
 							{
-								"711c6ff4-d85c-baf8-978c-0f243c0132a6",
+								"721ec58b-dd6e-672c-93e5-250f9b3d95d0",
 								true,
 							},
 							
 							{
-								"1d683c71-358e-8ced-8ee5-3b5694dee38f",
+								"2277a705-4a80-f024-95d7-44b2f44f65fb",
 								true,
 							},
 							
 							{
-								"2a565615-e572-1ec6-87d0-4f7894961cbc",
+								"868a2d13-1c48-2365-926d-c0b5473c7f0d",
+								true,
+							},
+						},
+						gVar = "ACR_TensorRequiem3_CD",
+						gVarValue = 2,
+						uuid = "284cd3f1-9c46-c117-a87d-aaed647f121f",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "ACR",
+						conditions = 
+						{
+							
+							{
+								"721ec58b-dd6e-672c-93e5-250f9b3d95d0",
+								true,
+							},
+							
+							{
+								"2277a705-4a80-f024-95d7-44b2f44f65fb",
+								true,
+							},
+							
+							{
+								"868a2d13-1c48-2365-926d-c0b5473c7f0d",
 								true,
 							},
 						},
 						endIfUsed = true,
 						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "3ab6c673-7ef7-08f1-8797-5d185db4a52b",
+						uuid = "15b3f88f-6252-5780-9b69-0a8cafcedb2f",
 						version = 2.1,
 					},
 				},
@@ -797,7 +494,185 @@ local tbl =
 						dequeueIfLuaFalse = true,
 						localmapid = 1362,
 						name = "Is Unmaking-EX",
-						uuid = "711c6ff4-d85c-baf8-978c-0f243c0132a6",
+						uuid = "721ec58b-dd6e-672c-93e5-250f9b3d95d0",
+						version = 3,
+					},
+					inheritedIndex = 1,
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 2,
+						eventEntityContentID = 14754,
+						name = "Is Beacon",
+						uuid = "2277a705-4a80-f024-95d7-44b2f44f65fb",
+						version = 3,
+					},
+					inheritedIndex = 1,
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgType = 3,
+						name = "Is Beacon Targetable",
+						uuid = "868a2d13-1c48-2365-926d-c0b5473c7f0d",
+						version = 3,
+					},
+					inheritedIndex = 1,
+				},
+			},
+			eventType = 26,
+			name = "[UM-EX] Toggle CD For Intermission",
+			throttleTime = 12000,
+			timeout = 15,
+			uuid = "007c0d95-ee8d-9c52-a176-45da037cfe26",
+			version = 2,
+		},
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "ACR",
+						conditions = 
+						{
+							
+							{
+								"6400b9c2-4f0c-ed13-8660-845c8169cfdf",
+								true,
+							},
+							
+							{
+								"a09f268a-1dfe-2dcd-ba30-3250c7fedb98",
+								true,
+							},
+							
+							{
+								"022cfd69-ac35-b709-a5db-75207988f704",
+								true,
+							},
+						},
+						gVar = "ACR_TensorRequiem3_AOE",
+						gVarValue = 2,
+						uuid = "7c787d02-9889-bbc7-b492-af4bbeeb1c0f",
+						version = 2.1,
+					},
+					inheritedIndex = 1,
+				},
+				
+				{
+					data = 
+					{
+						aType = "ACR",
+						conditions = 
+						{
+							
+							{
+								"6400b9c2-4f0c-ed13-8660-845c8169cfdf",
+								true,
+							},
+							
+							{
+								"a09f268a-1dfe-2dcd-ba30-3250c7fedb98",
+								true,
+							},
+							
+							{
+								"022cfd69-ac35-b709-a5db-75207988f704",
+								true,
+							},
+						},
+						endIfUsed = true,
+						gVar = "ACR_TensorRequiem3_SmartDoT",
+						gVarValue = 2,
+						uuid = "316d2994-f925-178c-a315-303ac9732331",
+						version = 2.1,
+					},
+					inheritedIndex = 2,
+				},
+				
+				{
+					data = 
+					{
+						aType = "ACR",
+						conditions = 
+						{
+							
+							{
+								"6400b9c2-4f0c-ed13-8660-845c8169cfdf",
+								true,
+							},
+							
+							{
+								"2277a705-4a80-f024-95d7-44b2f44f65fb",
+								true,
+							},
+							
+							{
+								"868a2d13-1c48-2365-926d-c0b5473c7f0d",
+								true,
+							},
+						},
+						gVar = "ACR_TensorRequiem3_AOE",
+						uuid = "cdc3db13-3bdd-d260-a766-5fff3bd0cde3",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "ACR",
+						conditions = 
+						{
+							
+							{
+								"6400b9c2-4f0c-ed13-8660-845c8169cfdf",
+								true,
+							},
+							
+							{
+								"2277a705-4a80-f024-95d7-44b2f44f65fb",
+								true,
+							},
+							
+							{
+								"868a2d13-1c48-2365-926d-c0b5473c7f0d",
+								true,
+							},
+						},
+						endIfUsed = true,
+						gVar = "ACR_TensorRequiem3_SmartDoT",
+						uuid = "15b3f88f-6252-5780-9b69-0a8cafcedb2f",
+						version = 2.1,
+					},
+					inheritedIndex = 4,
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1362,
+						name = "Is Unmaking-EX",
+						uuid = "6400b9c2-4f0c-ed13-8660-845c8169cfdf",
 						version = 3,
 					},
 					inheritedIndex = 1,
@@ -811,9 +686,10 @@ local tbl =
 						eventArgOptionType = 2,
 						eventEntityContentID = 14752,
 						name = "Is Looming Shadow",
-						uuid = "1d683c71-358e-8ced-8ee5-3b5694dee38f",
+						uuid = "a09f268a-1dfe-2dcd-ba30-3250c7fedb98",
 						version = 3,
 					},
+					inheritedIndex = 1,
 				},
 				
 				{
@@ -821,141 +697,12 @@ local tbl =
 					{
 						category = "Event",
 						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventSpellID = 49982,
-						name = "Is Looming Emptiness",
-						uuid = "2a565615-e572-1ec6-87d0-4f7894961cbc",
+						eventArgType = 3,
+						name = "Is Looming Shadow Targetable",
+						uuid = "022cfd69-ac35-b709-a5db-75207988f704",
 						version = 3,
 					},
-				},
-			},
-			eventType = 2,
-			name = "[UM-EX] Reset Towers",
-			uuid = "b4a4d5b0-cd80-935f-afac-64c1a804f39a",
-			version = 2,
-		},
-		inheritedIndex = 9,
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "if table.size(gUnmakingEXTowerData) == 4 then\n\tgUnmakingEXTowerData = {}\nend\n\nlocal pos = { x = eventArgs.x, y = eventArgs.y, z = eventArgs.z }\ntable.insert(gUnmakingEXTowerData, pos)\n\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"d18083b9-6dcf-4c1d-b96a-1dd536cb6938",
-								true,
-							},
-							
-							{
-								"c506f003-5abf-887f-87dc-77023372573f",
-								true,
-							},
-						},
-						endIfUsed = true,
-						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "532ec2b3-c63b-5181-967f-10eaacaef100",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1362,
-						name = "Is Unmaking-EX",
-						uuid = "d18083b9-6dcf-4c1d-b96a-1dd536cb6938",
-						version = 3,
-					},
-					inheritedIndex = 1,
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return (eventArgs.aoeID == 50013 and eventArgs.contentID == 14752)",
-						dequeueIfLuaFalse = true,
-						name = "Is Tower AOE",
-						uuid = "c506f003-5abf-887f-87dc-77023372573f",
-						version = 3,
-					},
-				},
-			},
-			eventType = 18,
-			name = "[UM-EX] Capture Towers",
-			uuid = "e692e0f0-30ff-2e9a-a387-3f9cfc001676",
-			version = 2,
-		},
-		inheritedIndex = 10,
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local c = { x = 100, y = 0, z = 100 }\nlocal drawer = TensorCore.getMoogleDrawer()\n\ntable.sort(gUnmakingEXTowerData, function (a, b) \n    local h1 =  TensorCore.getHeadingToTarget(c, a) - math.pi\n    local h2 = TensorCore.getHeadingToTarget(c, b) - math.pi\n        \n    if h1 < 0 then h1 = h1 + 2 * math.pi end\n    if h2 < 0 then h2 = h2 + 2 * math.pi end\n\n    return (h1 > h2)\nend)\n\nfor i, tower in ipairs(gUnmakingEXTowerData) do\n    drawer:addTimedCircle(6700, tower.x, tower.y, tower.z, 5)\n    AnyoneCore.addTimedWorldText(6700, tostring(i), tower, nil, true, 2)\nend\n\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"db91ee4f-12be-c45e-b98a-90153a3dd817",
-								true,
-							},
-							
-							{
-								"99c9c235-a7b1-e018-996e-9fb50b0247a8",
-								true,
-							},
-							
-							{
-								"275eed77-f269-f822-8426-40ce6f2b662a",
-								true,
-							},
-						},
-						endIfUsed = true,
-						gVar = "ACR_TensorRequiem3_CD",
-						uuid = "f45bb9a8-31a7-4398-81aa-e738f2d2260d",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1362,
-						name = "Is Unmaking-EX",
-						uuid = "db91ee4f-12be-c45e-b98a-90153a3dd817",
-						version = 3,
-					},
-					inheritedIndex = 1,
+					inheritedIndex = 2,
 				},
 				
 				{
@@ -964,11 +711,12 @@ local tbl =
 						category = "Event",
 						dequeueIfLuaFalse = true,
 						eventArgOptionType = 2,
-						eventEntityContentID = 14752,
-						name = "Is Looming Shadow",
-						uuid = "99c9c235-a7b1-e018-996e-9fb50b0247a8",
+						eventEntityContentID = 14754,
+						name = "Is Beacon",
+						uuid = "2277a705-4a80-f024-95d7-44b2f44f65fb",
 						version = 3,
 					},
+					inheritedIndex = 1,
 				},
 				
 				{
@@ -976,20 +724,19 @@ local tbl =
 					{
 						category = "Event",
 						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventSpellID = 50036,
-						name = "Is Voidal Turbulence",
-						uuid = "275eed77-f269-f822-8426-40ce6f2b662a",
+						eventArgType = 3,
+						name = "Is Beacon Targetable",
+						uuid = "868a2d13-1c48-2365-926d-c0b5473c7f0d",
 						version = 3,
 					},
+					inheritedIndex = 1,
 				},
 			},
-			eventType = 3,
-			name = "[UM-EX] Draw Tower Numbers",
-			uuid = "d47beb8d-1287-103e-a031-02fdb5cef0d5",
+			eventType = 26,
+			name = "[UM-EX] Toggle AOE For Intermission",
+			uuid = "fca0d199-9765-e1ef-9778-4709bf65def9",
 			version = 2,
 		},
-		inheritedIndex = 11,
 	}, 
 	inheritedProfiles = 
 	{
